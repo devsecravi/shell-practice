@@ -1,5 +1,5 @@
 #!/bin/bash
 
-START=(date)
+START=$(date)
 
 echo "starting time is: $START"
