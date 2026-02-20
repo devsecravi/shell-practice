@@ -14,6 +14,7 @@ if [ $? -ne 0 ]; then
    echo "enable nodejs is...FAIL"
    else
    echo "enable nodejs is...SUCESS"
+fi
 
 echo "enable nodejs"
 dnf module enable nodejs:20 -y
@@ -22,6 +23,7 @@ if [ $? -ne 0 ]; then
    echo "enable nodejs is...FAIL"
    else
    echo "enable nodejs is...SUCESS"
+fi
 
 echo "installing nodejs"
 dnf install nodejs -y
@@ -30,3 +32,4 @@ if [ $? -ne 0 ]; then
    echo "nodejs installing is...FAIL"
    else
    echo "nodejs installing is...SUCESS"
+fi
