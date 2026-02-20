@@ -1,10 +1,10 @@
 #!/bin/bash
 
-START=$(+%s date)
+START=$(date +%s)
 
 echo "starting time is: $START"
 
-END=$(+%s date)
+END=$(date +%s)
 echo "End time is:$END"
 TOTAL=(($START-$END))
 
