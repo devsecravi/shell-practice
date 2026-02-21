@@ -24,7 +24,7 @@ echo "Installing..."
 for pack in $@;
 do 
     dnf list installed $pack &>>$LOGS_FILE
-    if [ $? -ne 1 ]
+    if [ $? -ne 1 ]; then
       echo "Removing..."
       dnf remove $pack &>>$LOGS_FILE
       validate $? &pack "Removing.."
