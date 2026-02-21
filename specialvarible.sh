@@ -1,9 +1,10 @@
 #!/bin/bash
+USERNAME=$(id -u)
 
 echo "Print the all arguments: $@"
 echo "Print the current shell file name:$0"
 echo "Print the current directory: $PWD"
-echo "print the USER NAME: $ID -u"
+echo "print the USER NAME: $USERNAME"
 echo "print the HOME Directry: $HOME"
 echo "Print the current root user: $USER"
 echo "print the previoes execute command: $?"
