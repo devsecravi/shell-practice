@@ -8,7 +8,7 @@ if [ $USERID -ne 0 ]; then
 fi
 
 echo "Installing..."
-dnf install nodejs -y
+dnf install mysql-server -y
 
 
 validate() {
@@ -18,4 +18,4 @@ validate() {
       echo "Installing....SUCESS"
     fi
 }
-echo validate 
+validate 
