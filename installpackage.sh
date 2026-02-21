@@ -17,7 +17,7 @@ validate() {
 validate 
 echo "Installing..."
 
-for(package in $@)
+for package in $@ 
 do 
    dnf install $package
    validate $package "Installing"
