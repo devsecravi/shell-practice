@@ -18,21 +18,6 @@ validate() {
     fi
 }
 
-
-echo "removing..."
-
-for pack in $@;
-do 
-    dnf list installed $pack &>>$LOGS_FILE
-    if [ rpm -q &pack &>/dev/null]; then
-      echo "Removing..."
-      dnf remove $pack &>>$LOGS_FILE
-      validate $? $pack "removing" | tee -a $LOGS_FILE
-   else
-      echo "it's not required removed, because not installed"
-   fi
-done       
- 
 echo "Installing..."
 
 for package in $@;
