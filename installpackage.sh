@@ -18,6 +18,11 @@ validate() {
     fi
 }
  
+for pack in $@
+do  
+    dnf remove $pack -y &>> $LOGS_FILE
+    validate $? $pack "removing"
+done
 
 echo "Installing..."
 
@@ -25,7 +30,7 @@ for package in $@
 do 
    if [ $? -ne 1 ]; then
       echo "$package not installed, installing now"
-      dnf install $package -y | &>> $LOGS_FILE
+      dnf install $package -y  &>> $LOGS_FILE
       validate $? $package "Installing" | tee -a $LOGS_FILE
    else
       echo "Already installed package: $package" | tee -a $LOGS_FILE
