@@ -17,17 +17,7 @@ validate() {
       echo "$2....SUCESS" | tee -a $LOGS_FILE
     fi
 }
- 
-for pack in $@
-do
-    if [ $? -ne 0 ]; then
-      echo "$pack removing"
-      dnf remove $pack -y &>> $LOGS_FILE
-   else
-      echo "no need to remove $pack"
-   fi
-done
-       
+        
  
 echo "Installing..."
 
