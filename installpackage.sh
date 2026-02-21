@@ -21,8 +21,17 @@ validate() {
  
 echo "Installing..."
 
-
-
+for pack in $@;
+do 
+    dnf list installed $pack &>>$LOGS_FILE
+    if [ $? -ne 1 ]
+      echo "Removing..."
+      dnf remove $pack &>>$LOGS_FILE
+      validate $? &pack "Removing.."
+   else
+      echo "it's not required removed, because not installed"
+   fi
+done
 
 for package in $@;
 do 
