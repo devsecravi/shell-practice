@@ -1,5 +1,5 @@
 #!/bin/bash
 
-person=$(date)
+person=$(date +%s)
 
 echo "Date: $person"
