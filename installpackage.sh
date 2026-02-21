@@ -19,6 +19,8 @@ validate() {
 }
 
 
+echo "removing..."
+
 for pack in $@;
 do 
     dnf list installed $pack &>>$LOGS_FILE
