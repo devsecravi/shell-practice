@@ -12,9 +12,9 @@ fi
 mkdir -p $LOGS_FOLDER
 validate() {
      if [ $1 -ne 0 ]; then
-      echo "$2.....FAILURE" | &>> $LOGS_FILE
+      echo "$2.....FAILURE" | &>> tee $LOGS_FILE
       else
-      echo "$2....SUCESS" | &>> $LOGS_FILE
+      echo "$2....SUCESS" | &>> tee $LOGS_FILE
     fi
 }
  
@@ -24,10 +24,10 @@ for package in $@
 do 
 if [ $? -ne 0 ]; then
    echo "$package not installed, installing now"
-   dnf install $package -y 
-   validate $? $package "Installing" | &>> $LOGS_FILE
+   dnf install $package -y  &>>  $LOGS_FILE
+   validate $? $package "Installing" | &>> tee $LOGS_FILE
    else
-   echo "Already installed package: $package" | &>> $LOGS_FILE
+   echo "Already installed package: $package" | &>> tee $LOGS_FILE
 fi
 done
 
