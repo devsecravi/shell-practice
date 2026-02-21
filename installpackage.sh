@@ -23,7 +23,7 @@ echo "Installing..."
 
 for package in $@ 
 do 
-   if [ $? -ne 0 ]; then
+   if [ $? -ne 1 ]; then
       echo "$package not installed, installing now"
       dnf install $package -y | &>> $LOGS_FILE
       validate $? $package "Installing" | tee -a $LOGS_FILE
