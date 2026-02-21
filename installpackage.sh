@@ -27,7 +27,7 @@ do
       echo "$package not installed, installing now"
       dnf install $package -y | &>> $LOGS_FILE
       validate $? $package "Installing" | tee -a $LOGS_FILE
-      else
+   else
       echo "Already installed package: $package" | tee -a $LOGS_FILE
    fi
 done
