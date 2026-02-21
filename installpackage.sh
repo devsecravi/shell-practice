@@ -6,7 +6,7 @@ if [ $USERID -ne 0 ]; then
    echo "This command has to be run with superuser privileges"
    exit 1
 fi
-validate(){
+validate() {
      if [ $? -ne 0 ]; then
       echo "Installing.....FAILURE"
       else
