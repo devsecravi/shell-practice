@@ -7,10 +7,6 @@ if [ $USERID -ne 0 ]; then
    exit 1
 fi
 
-echo "Installing..."
-dnf install mysql-server -y
-
-
 validate() {
      if [ $? -ne 0 ]; then
       echo "Installing.....FAILURE"
@@ -19,3 +15,13 @@ validate() {
     fi
 }
 validate 
+echo "Installing..."
+
+for(package in $@)
+do 
+   dnf install $package
+   validate $package "Installing"
+done
+
+
+
