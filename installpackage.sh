@@ -17,9 +17,7 @@ validate() {
       echo "$2....SUCESS" | tee -a $LOGS_FILE
     fi
 }
-        
- 
-echo "Installing..."
+
 
 for pack in $@;
 do 
@@ -31,7 +29,9 @@ do
    else
       echo "it's not required removed, because not installed"
    fi
-done
+done       
+ 
+echo "Installing..."
 
 for package in $@;
 do 
