@@ -27,7 +27,7 @@ do
     if [ $? -ne 1 ]; then
       echo "Removing..."
       dnf remove $pack &>>$LOGS_FILE
-      validate $? &pack "Removing.."
+      validate $? $pack "removing" | tee -a $LOGS_FILE
    else
       echo "it's not required removed, because not installed"
    fi
