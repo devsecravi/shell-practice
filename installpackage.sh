@@ -8,19 +8,23 @@ if [ $USERID -ne 0 ]; then
 fi
 
 validate() {
-     if [ $? -ne 0 ]; then
-      echo "Installing.....FAILURE"
+     if [ $1 -ne 0 ]; then
+      echo "$2.....FAILURE"
       else
-      echo "Installing....SUCESS"
+      echo "$2....SUCESS"
     fi
 }
-validate 
+ 
 echo "Installing..."
 
 for package in $@ 
 do 
-   dnf install $package
-   validate $package "Installing"
+if [ $? -ne 0]; then
+   echo "$package not installed, installing now"
+   dnf install $package -y 
+   validate $? $package "Installing"
+   else
+   echo "Already installed package: $package"
 done
 
 
