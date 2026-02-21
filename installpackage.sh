@@ -21,7 +21,9 @@ validate() {
  
 echo "Installing..."
 
-for package in $@ 
+
+
+for package in "$@";
 do 
    if [ $? -ne 1 ]; then
       echo "$package not installed, installing now"
