@@ -8,7 +8,7 @@ if [ $USERID -ne 0 ]; then
 fi
 
 echo "Installing..."
-dnf install nginx -y
+dnf install nodejs -y
 
 
 validate() {
