@@ -26,6 +26,7 @@ echo "Installing..."
 
 for package in $@;
 do 
+    dnf list installed $package &>> $LOGS_FILE
    if [ $? -ne 1 ]; then
       echo "$package not installed, installing now"
       dnf install $package -y  &>> $LOGS_FILE
