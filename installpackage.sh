@@ -24,7 +24,7 @@ echo "removing..."
 for pack in $@;
 do 
     dnf list installed $pack &>>$LOGS_FILE
-    if [ $? -ne 1 ]; then
+    if [ rpm -q &pack &>/dev/null]; then
       echo "Removing..."
       dnf remove $pack &>>$LOGS_FILE
       validate $? $pack "removing" | tee -a $LOGS_FILE
