@@ -21,9 +21,10 @@ validate() {
 for package in $@
 do
     dnf remove $package -y | &>> $LOGS_FILE
-    ech "$package Removing"
+    echo "$package Removing"
     validate $? $package "remove"
 done
+
 
 echo "Installing..."
 
