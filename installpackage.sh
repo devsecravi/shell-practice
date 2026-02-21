@@ -25,6 +25,7 @@ if [ $? -ne 0]; then
    validate $? $package "Installing"
    else
    echo "Already installed package: $package"
+fi
 done
 
 
