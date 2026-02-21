@@ -18,12 +18,7 @@ validate() {
     fi
 }
  
-for pack in $@
-do  
-    dnf remove $pack -y &>> $LOGS_FILE
-    validate $? $pack "removing"
-done
-
+ 
 echo "Installing..."
 
 for package in $@ 
