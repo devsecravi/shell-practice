@@ -13,7 +13,13 @@ fi
 
 
 for package in $@;
+     dnf list installed $package
 do
-    dnf install $package -y
+        if [ $? -ne 0 ]; then
+            echo "instaling $package"
+            dnf install $package -y
+        else 
+            echo "already installed package name: $package"
+        fi
 done
 
