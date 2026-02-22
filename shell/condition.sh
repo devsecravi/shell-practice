@@ -1,6 +1,6 @@
 #!/bin/bash
 
-num=24
+num=25
 
 if [ $num -eq 23 ]; then
    echo "Given Number is equal to: $num"
