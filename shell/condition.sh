@@ -18,10 +18,10 @@ mkdir $FILE_FOLDER
 
 for package in $@;    
 do
-         dnf list installed $package &>>$FILE_LOG
+         dnf list installed $package &>> $FILE_LOG
         if [ $? -ne 0 ]; then
             echo "instaling $package" |  tee $FILE_LOG
-            dnf install $package -y &>>$FILE_LOG
+            dnf install $package -y &>> $FILE_LOG
         else 
             echo "already installed package name: $package" | tee $FILE_LOG
         fi
