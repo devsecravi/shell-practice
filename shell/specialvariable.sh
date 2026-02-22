@@ -18,8 +18,7 @@ printmultiple(){
     echo "Shell Script Fetch File Name: $0"
 }
 
-printmultiple 
 
-printmultiple
+
 
 
