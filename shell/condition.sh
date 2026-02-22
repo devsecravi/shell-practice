@@ -12,9 +12,9 @@ else
 fi
 
 
-for package in $@;
-     dnf list installed $package
+for package in $@;    
 do
+         dnf list installed $package
         if [ $? -ne 0 ]; then
             echo "instaling $package"
             dnf install $package -y
