@@ -12,7 +12,8 @@ else
 fi
 
 
-for print in $num;
+for package in $@;
 do
-   echo "print upto $num: $print)"
+    dnf install $package -y
 done
+
