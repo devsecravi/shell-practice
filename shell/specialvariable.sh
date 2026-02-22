@@ -1,8 +1,14 @@
 #!/bin/bash
 
 
-allargument=$@
+echo "All read Argument from Console: $@"
+echo "All read Argument from Console in single entity: $*"
+echo "All read Argument from Console count: $#"
 
-count=$#
-echo "Print All argument: $allargument"
-echo "count the argumnets :$count"
+echo "Current ROOT USER: $USER"
+echo "Current HOME DIRECTORY: $HOME"
+echo "PRESENT WORK DIRECTORY: $PWD"
+
+echo "Presnt PID: $$"
+echo "PID backgroup process: $!"
+
