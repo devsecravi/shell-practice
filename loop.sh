@@ -26,7 +26,7 @@ for package in $@
    
 do
     dnf list installed$package &>>$LOGS_FILE
-    if [ $? -ne 0 ]; then
+    if [ $? -eq 0 ]; then
         echo "$package is not installed, installing now" | tee -a $LOGS_FILE
         dnf install $package -y &>>$LOGS_FILE
         validate $? "Installing $package"
