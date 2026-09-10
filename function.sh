@@ -1,6 +1,7 @@
 #!/bin/bash
 
 USERID=$(id -u)
+LOGS_FOLDER="/var/log/shell-script"
 
 if [ $USERID -ne 0 ]; then
     echo "You are not root user, please run as root"
@@ -12,6 +13,7 @@ validate(){
       
       if [ $1 -ne 0 ]; then
              echo "$2 ....Filed"
+             exit 1
         else
              echo "$2 ....Success"
         fi
