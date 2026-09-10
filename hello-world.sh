@@ -1,9 +1,12 @@
 #!/bin/bash
 
-echo "Suresh:: hello ramesh, how are you"
-echo "Ramesh:: I am fine, how are you"
-echo "Suresh:: I am also fine"
-echo "Ramesh:: Great, let's catch up soon"
-echo "Suresh:: Sure, let's plan for the weekend"
-echo "Ramesh:: Sounds good, see you then"
-echo "Suresh:: Bye, take care"
+PERSON1="Suresh"
+PERSON2="Ramesh"
+
+echo "${PERSON1}:: hello ${PERSON2}, how are you"
+echo "${PERSON2}:: hi ${PERSON1}, I am fine, how are you"
+echo "${PERSON1}:: I am also fine"
+echo "${PERSON2}:: Great, let's catch up soon"
+echo "${PERSON1}:: Sure, let's plan for the weekend"
+echo "${PERSON2}:: Sounds good, see you then"
+echo "${PERSON1}:: Bye, take care"
