@@ -1,5 +1,5 @@
 NUM1=100
-NUM2=200
+NUM2=ravikumar
 
 SUM=$((NUM1 + NUM2))
 
