@@ -22,13 +22,8 @@ validate(){
         fi
 }
 
-dnf remove nginx -y &>> $LOGS_FILE
-
-validate $? "nginx installation"
-
-dnf remove mysql -y &>> $LOGS_FILE
-
-validate $? "mysql installation"
-
-dnf remove nodejs -y &>> $LOGS_FILE
-validate $? "nodejs installation"
+for package in $@
+do
+    dnf install $package -y &>> $LOGS_FILE
+    validate $? "Installing $package"
+done
