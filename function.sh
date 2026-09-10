@@ -17,13 +17,13 @@ validate(){
         fi
 }
 
-dnf install nginx -y 
+dnf remove nginx -y 
 
 validate $? "nginx installation"
 
-dnf install mysql -y
+dnf remove mysql -y
 
 validate $? "mysql installation"
 
-dnf install nodejs -y
+dnf remove nodejs -y
 validate $? "nodejs installation"
