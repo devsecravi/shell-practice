@@ -2,12 +2,15 @@
 
 USERID=$(id -u)
 LOGS_FOLDER="/var/log/shell-script"
+LOGS_FILE="/var/log/shell-script/$0.log"
+
 
 if [ $USERID -ne 0 ]; then
     echo "You are not root user, please run as root"
     exit 1
 fi
 
+mkdir -p $LOGS_FOLDER
 
 validate(){
       
@@ -19,13 +22,13 @@ validate(){
         fi
 }
 
-dnf remove nginx -y 
+dnf remove nginx -y &>> $LOGS_FILE
 
 validate $? "nginx installation"
 
-dnf remove mysql -y
+dnf remove mysql -y &>> $LOGS_FILE
 
 validate $? "mysql installation"
 
-dnf remove nodejs -y
+dnf remove nodejs -y &>> $LOGS_FILE
 validate $? "nodejs installation"
